@@ -1,1 +1,16 @@
 # Напишите здесь CI/CD пайплайн согласно заданию
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Версия образа для production (тег)'
+        required: false
+        default: 'latest'
+
+        
